@@ -1,0 +1,7 @@
+MONGODB_URI=mongodb://countly:HnBc9pM33R@34.79.61.151:27017/?authMechanism=DEFAULT&authSource=admin
+MONGODB_DATABASE=countly
+POSTGRES_USER=dbuser
+POSTGRES_PASSWORD=dbpassword
+POSTGRES_DB=countly
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+* * * * * python /app/script.py >> /var/log/cron.log 2>&1
