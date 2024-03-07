@@ -1,4 +1,4 @@
-MONGODB_URI=mongodb://countly:HnBc9pM33R@34.79.61.151:27017/?authMechanism=DEFAULT&authSource=admin
+MONGODB_URI=
 MONGODB_DATABASE=countly
 POSTGRES_USER=dbuser
 POSTGRES_PASSWORD=dbpassword
