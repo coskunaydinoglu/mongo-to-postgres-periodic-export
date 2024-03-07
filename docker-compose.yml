@@ -13,13 +13,15 @@ services:
       - ./postgres-init:/docker-entrypoint-initdb.d
 
   python-script:
-    build: ./python-script
+    build:
+      context: .  # Now points to `project-root/`
+      dockerfile: ./Dockerfile  # Adjusted to new Dockerfile locatio
     environment:
-      MONGODB_URI: mongodb://countly:HnBc9pM33R@34.79.61.151:27017/?authMechanism=DEFAULT&authSource=admin
-      MONGODB_DB: countly
-      POSTGRES_DB: countly
-      POSTGRES_USER: dbuser
-      POSTGRES_PASSWORD: dbpassword
+      MONGODB_URI: ${MONGODB_URI} #"mongodb://countly:HnBc9pM33R@34.79.61.151:27017/?authMechanism=DEFAULT&authSource=admin"
+      MONGODB_DB: ${MONGODB_DB} #countly
+      POSTGRES_DB: ${POSTGRES_DB} #countly
+      POSTGRES_USER: ${POSTGRES_USER} #countly
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD} #countly
     depends_on:
       - postgres
 

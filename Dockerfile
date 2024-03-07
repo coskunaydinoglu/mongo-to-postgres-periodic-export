@@ -5,6 +5,13 @@ RUN apt-get update && apt-get install -y cron
 
 WORKDIR /app
 
+# Copy the current directory contents into the container
+COPY . /app
+
+
+# Make wrapper script executable
+RUN chmod +x /app/wrapper.sh
+
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
@@ -21,3 +28,4 @@ RUN touch /var/log/cron.log
 
 # Run the command on container startup
 CMD cron && tail -f /var/log/cron.log
+
